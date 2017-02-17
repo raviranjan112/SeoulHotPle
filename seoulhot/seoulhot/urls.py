@@ -13,10 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+
+
+from django.conf.urls import url, include
 from django.contrib import admin
+import advertise
+from advertise.views import searchurl, searchpost
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # url(r'^hot/', func1)
+
+    url(r'^advertise/', include('advertise.urls')),
+    url(r'^searchurl/(?P<search>)', searchurl ,name='searchUrl'),
+    url(r'^searchpost/', searchpost, name='searchPost')
+
 ]

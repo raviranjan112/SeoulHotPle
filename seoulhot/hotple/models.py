@@ -11,6 +11,9 @@ class Station(models.Model):
     station_name = models.CharField(blank=True, max_length=100)
     line_number = models.CharField(blank=True, max_length=100)
 
+    def __str__(self):
+        return self.line_number + '   ' + self.station_name
+
 class SubwayModel(models.Model):
     ''' Seoul Hot place Subway model'''
 
@@ -153,4 +156,4 @@ class SubwayModel(models.Model):
                 )
 
     def __str__(self):
-        return self.station
+        return self.station.station_name

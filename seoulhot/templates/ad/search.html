@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>
+    {% for q in qs %}
+      {{q.company_name}}
+      {{q.company_location}}
+      {{q.ad_location.station_name}}
+      {{q.phone_number}}
+    {% endfor %}
+  </h1>
+  </body>
+</html>
