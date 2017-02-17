@@ -5,13 +5,18 @@
     <title></title>
   </head>
   <body>
-    <h1>
     {% for q in qs %}
-      {{q.company_name}}
-      {{q.company_location}}
-      {{q.ad_location.station_name}}
-      {{q.phone_number}}
+    <h1>
+      <strong>상호명</strong> : {{q.company_name}}
+      <strong>회사위치</strong> : {{q.company_location}}
+      <strong>역이름</strong> : {{q.ad_location.station_name}}
+      <strong>전화번호</strong> : {{q.phone_number}}
+    </h1>
     {% endfor %}
-  </h1>
+    {% for station in stations %}
+      {% for station_ad in station.admodel_set.all %}
+      <h2>역이름: {{station.station_name}} 회사이름: {{station_ad.company_name}}</h2>
+      {% endfor %}
+    {% endfor %}
   </body>
 </html>

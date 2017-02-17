@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^advertise/', include('advertise.urls')),
-    url(r'^searchurl/(?P<search>)', searchurl ,name='searchUrl'),
+    url(r'^searchurl/(?P<station>[가-힣]+)/(?P<search>[가-힣]+)', searchurl ,name='searchUrl'),
     url(r'^searchpost/', searchpost, name='searchPost')
 
 ]
