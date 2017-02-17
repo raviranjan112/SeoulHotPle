@@ -1,0 +1,6 @@
+framework module Pods_SeoulHotPle {
+  umbrella header "Pods-SeoulHotPle-umbrella.h"
+
+  export *
+  module * { export * }
+}

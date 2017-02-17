@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainTableViewCell" rowHeight="60" id="KGk-i7-Jjw" customClass="MainTableViewCell" customModule="SeoulHotPle" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="366" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="366" height="59"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="box" translatesAutoresizingMaskIntoConstraints="NO" id="Vsn-JP-tA6">
+                        <rect key="frame" x="8" y="4" width="350" height="51.5"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cH-9g-bZQ">
+                        <rect key="frame" x="300" y="15.5" width="53" height="28"/>
+                        <state key="normal" image="join"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4호선: 중앙역" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psh-yt-wDs">
+                        <rect key="frame" x="22" y="19.5" width="183" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="( 0명 )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLi-ib-YqI">
+                        <rect key="frame" x="222" y="18.5" width="70" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="RwK-MX-Jno"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Vsn-JP-tA6" secondAttribute="trailing" constant="8" id="0rC-Eb-vOY"/>
+                    <constraint firstItem="Vsn-JP-tA6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="8PW-da-s79"/>
+                    <constraint firstItem="NLi-ib-YqI" firstAttribute="centerY" secondItem="0cH-9g-bZQ" secondAttribute="centerY" id="ENi-5m-s1d"/>
+                    <constraint firstItem="psh-yt-wDs" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="1:2" id="MXD-xt-gm2"/>
+                    <constraint firstItem="psh-yt-wDs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="MXl-ad-CSq"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="0cH-9g-bZQ" secondAttribute="trailing" constant="5" id="O9c-KV-XLc"/>
+                    <constraint firstItem="psh-yt-wDs" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="mc8-Gs-wc4"/>
+                    <constraint firstAttribute="bottom" secondItem="Vsn-JP-tA6" secondAttribute="bottom" constant="4" id="nhw-lV-8lk"/>
+                    <constraint firstItem="0cH-9g-bZQ" firstAttribute="centerY" secondItem="psh-yt-wDs" secondAttribute="centerY" id="uXZ-Rh-Se3"/>
+                    <constraint firstItem="Vsn-JP-tA6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="vTR-IQ-Y09"/>
+                    <constraint firstItem="0cH-9g-bZQ" firstAttribute="leading" secondItem="NLi-ib-YqI" secondAttribute="trailing" constant="8" id="w32-aP-e25"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="ChatPopular" destination="NLi-ib-YqI" id="blK-UT-4LW"/>
+                <outlet property="btnGoChat" destination="0cH-9g-bZQ" id="U87-gT-vHB"/>
+                <outlet property="lbStationName" destination="psh-yt-wDs" id="Scv-OH-8Li"/>
+            </connections>
+            <point key="canvasLocation" x="63" y="3"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="box" width="354" height="62"/>
+        <image name="join" width="53" height="28"/>
+    </resources>
+</document>
