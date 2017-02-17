@@ -1,8 +1,6 @@
 from django.contrib import admin
 
-from .models import SubModel, LineNumber, Population
+from .models import SubwayModel
 
 
-
-admin.site.register(Population)
-admin.site.register(SubModel)
+admin.site.register(SubwayModel)
