@@ -14,15 +14,17 @@ import FirebaseDatabase
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, NetworkCallback {
     
+    @IBOutlet weak var loadingBar: UIActivityIndicatorView!
     @IBOutlet weak var lbStationCnt: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBAction func btnReload(_ sender: Any) {
         print("갱신")
+        lbStationCnt.text = "near by 0 stations"
+        arrayOfCellData.removeAll()
         loadLocationData()
-        moveCamera()
     }
     
-    @IBOutlet weak var mapView: UIView!
+    @IBOutlet weak var mapView: GMSMapView!
     var locationManager: CLLocationManager = CLLocationManager()
     var startLocation: CLLocation!
     var currentLocation: CLLocation?
@@ -43,17 +45,21 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
+    
+        mapView?.isMyLocationEnabled = true
+        mapView?.settings.compassButton = true
         
-        gmsMapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        gmsMapView?.isMyLocationEnabled = true
-        self.mapView = gmsMapView
-        gmsMapView?.settings.compassButton = true
+        
+        let camera: GMSCameraPosition = GMSCameraPosition.camera(withLatitude: 37.5079943965216, longitude: 127.045255477494, zoom: 14.0)
+        self.mapView.camera = camera
+        
         
         apiServiceModel = APIServiceModel(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         arrayOfCellData.removeAll()
+        lbStationCnt.text = "near by 0 stations"
         loadLocationData()
     }
     
@@ -83,6 +89,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    override func networkFail() {
+        loadingBar.stopAnimating()
+    }
+    
     func setPopulation() {
         hotplechat.observe(.value, with: { snapshot in
             if let dict = snapshot.value as? [String: AnyObject] {
@@ -97,6 +107,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         })
         self.tableView.reloadData()
+        loadingBar.stopAnimating()
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -171,6 +183,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func locationManager(_ manager: CLLocationManager,
                          didUpdateLocations locations: [CLLocation]) {
+        self.loadingBar.startAnimating()
+
         print("현재 좌표")
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         print("locations = \(locValue.latitude) \(locValue.longitude)")
@@ -183,31 +197,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         locationManager.stopUpdatingLocation()
         //
         
-        let camera = GMSCameraPosition.camera(withLatitude: Constants.CURRENT_LOCATION_WGS84_X!, longitude: Constants.CURRENT_LOCATION_WGS84_Y!, zoom: 6)
+//        let camera = GMSCameraPosition.camera(withLatitude: Constants.CURRENT_LOCATION_WGS84_X!, longitude: Constants.CURRENT_LOCATION_WGS84_Y!, zoom: 6)
 
+        let camera: GMSCameraPosition = GMSCameraPosition.camera(withLatitude: locValue.latitude, longitude: locValue.longitude, zoom: 14.0)
+        self.mapView.camera = camera
         //좌표 전환
         //        &y=37.6353286&x=126.9285957
         apiServiceModel?.transCoor(x: locValue.longitude, y: locValue.latitude, fromCoord: "WGS84", toCoord: "WTM")
         
     }
     
-    func moveCamera() {
-        DispatchQueue.main.async { () -> Void in
-            
-            let position = CLLocationCoordinate2DMake(Constants.CURRENT_LOCATION_WGS84_X!, Constants.CURRENT_LOCATION_WGS84_Y!)
-            let marker = GMSMarker(position: position)
-            
-            let camera = GMSCameraPosition.camera(withLatitude: Constants.CURRENT_LOCATION_WGS84_X!, longitude: Constants.CURRENT_LOCATION_WGS84_Y!, zoom: 6)
-            self.gmsMapView?.camera = camera
-            
-            self.gmsMapView?.animate(to: camera)
-            self.mapView = self.gmsMapView
-
-            marker.map = self.gmsMapView
-            
-        }
-        
-    }
 }
 
 
