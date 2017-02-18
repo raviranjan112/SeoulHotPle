@@ -55,7 +55,6 @@ class APIServiceModel: NetworkModel {
                 if let value = res.result.value {
                     //                        print(value)
                     let jsonData = JSON(value)
-                    //                                            print(jsonData)
                     
                     if let jsonArray = jsonData["stationList"].array {
                         var stationList = [Station]()
@@ -86,12 +85,12 @@ class APIServiceModel: NetworkModel {
         }
     }
     
-    func postMessage() {
+    func postMessage(station: String, keyword: String) {
         let url = "https://hotple-psypu.c9users.io:8080/searchpost/"
         
         let params = [
-            "keyword" : "abc",
-            "station" : "선릉"
+            "keyword" : keyword,
+            "station" : station
         ]
         
         Alamofire.request(url, method: .post, parameters: params).responseJSON(){ res in
@@ -99,8 +98,10 @@ class APIServiceModel: NetworkModel {
             case .success:
                 if let value = res.result.value {
                     let data = JSON(value)
+                    print("postMessageToServer")
                     print(data)
-                    self.view.networkResult(resultData: "", code: 0)
+                    let message = ChatbotMessage(one_station: data["one_station"].string, restaurant: data["restaurant"].string, location: data["location"].string, population: data["population"].int, phone: data["phone"].string)
+                    self.view.networkResult(resultData: message, code: Constants.CODE_CHATBOT)
                 }
             case .failure(let err):
                 print(err)

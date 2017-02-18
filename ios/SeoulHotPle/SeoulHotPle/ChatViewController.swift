@@ -57,7 +57,12 @@ class ChatViewController: JSQMessagesViewController, NetworkCallback{
     }
     
     func networkResult(resultData: Any, code: Int) {
-        print("CODE = \(code)")
+        if code == Constants.CODE_CHATBOT {
+            let data = resultData as! ChatbotMessage
+            let newMessage = messageRef.childByAutoId()
+            let messageData = ["text": "현재시간 이 지역의 예상 유동인구는 \(data.population!)명 입니다. \(data.location!)근처 \(data.restaurant!)에 가시는건 어떠세요? 전화번호는 \(data.phone!) 입니다.", "senderId": "chatbot", "senderName": senderDisplayName, "MediaType": "TEXT"]
+            newMessage.setValue(messageData)
+        }
     }
     
     func observeUsers(id: String) {
@@ -167,7 +172,7 @@ class ChatViewController: JSQMessagesViewController, NetworkCallback{
         newMessage.setValue(messageData)
         
         //서버에 보내서 챗봇기능
-        apiServiceModel?.postMessage()
+        apiServiceModel?.postMessage(station: Constants.CURRENT_STATION, keyword: text)
         
         
         self.finishSendingMessage() //입력창 비우기
@@ -285,9 +290,9 @@ class ChatViewController: JSQMessagesViewController, NetworkCallback{
         let bubbleFactory = JSQMessagesBubbleImageFactory()
         
         if message.senderId == self.senderId {
-            return bubbleFactory?.outgoingMessagesBubbleImage(with: UIColor.black)
+            return bubbleFactory?.outgoingMessagesBubbleImage(with: UIColor.rgb(fromHex: 0xacacac))
         } else {
-            return bubbleFactory?.incomingMessagesBubbleImage(with: UIColor.blue)
+            return bubbleFactory?.incomingMessagesBubbleImage(with: UIColor.rgb(fromHex: 0xf87160))
         }
         
     }

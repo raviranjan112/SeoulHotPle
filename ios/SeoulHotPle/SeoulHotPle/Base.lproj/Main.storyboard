@@ -136,7 +136,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2Ez-Xr-tLQ">
-                                <rect key="frame" x="177" y="500.5" width="20" height="20"/>
+                                <rect key="frame" x="177" y="501" width="20" height="20"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="near by 0 stations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aI-jd-5ke">
                                 <rect key="frame" x="47" y="323" width="137" height="21"/>
@@ -171,6 +171,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="search" id="eQu-3p-cPb">
                             <color key="tintColor" red="0.97254901960784312" green="0.44313725490196076" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="searchWithAddress:" destination="3Bb-9m-tUQ" id="vOf-bR-kvK"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -207,7 +210,7 @@
             <objects>
                 <navigationController storyboardIdentifier="NavigationVC" automaticallyAdjustsScrollViewInsets="NO" id="tJR-I4-zZO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5mo-gI-Aob">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5mo-gI-Aob">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.2666666667" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -300,7 +303,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kaV-Kq-f5J" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8If-eW-MiP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8If-eW-MiP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -33,6 +33,7 @@ class Constants {
     static let CODE_DAUM_COORDI = 100 //다음 좌표계전환API
     static let CODE_SEOUL_STATION = 101
     static let CODE_RETURN_NIL = 400
+    static let CODE_CHATBOT = 102
     
     
     //ChatURL
