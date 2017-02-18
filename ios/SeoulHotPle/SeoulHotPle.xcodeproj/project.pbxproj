@@ -13,6 +13,8 @@
 		967A50931E573ED0006566C9 /* googleButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 967A508E1E573ED0006566C9 /* googleButton.png */; };
 		967A50941E573ED0006566C9 /* OrLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 967A508F1E573ED0006566C9 /* OrLine.png */; };
 		967A50951E573ED0006566C9 /* profileImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 967A50901E573ED0006566C9 /* profileImage.png */; };
+		967A50971E57B48B006566C9 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A50961E57B48B006566C9 /* SearchResultsController.swift */; };
+		967A50991E57BEAF006566C9 /* ChatbotMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A50981E57BEAF006566C9 /* ChatbotMessage.swift */; };
 		96FE19F01E56F5F000FF8AA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE19EF1E56F5F000FF8AA8 /* AppDelegate.swift */; };
 		96FE19F21E56F5F000FF8AA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE19F11E56F5F000FF8AA8 /* ViewController.swift */; };
 		96FE19F51E56F5F000FF8AA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FE19F31E56F5F000FF8AA8 /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		967A508E1E573ED0006566C9 /* googleButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = googleButton.png; sourceTree = "<group>"; };
 		967A508F1E573ED0006566C9 /* OrLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrLine.png; sourceTree = "<group>"; };
 		967A50901E573ED0006566C9 /* profileImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileImage.png; sourceTree = "<group>"; };
+		967A50961E57B48B006566C9 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
+		967A50981E57BEAF006566C9 /* ChatbotMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatbotMessage.swift; sourceTree = "<group>"; };
 		96FE19EC1E56F5F000FF8AA8 /* SeoulHotPle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeoulHotPle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96FE19EF1E56F5F000FF8AA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96FE19F11E56F5F000FF8AA8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 		96FE1A041E56F7E800FF8AA8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				967A50961E57B48B006566C9 /* SearchResultsController.swift */,
 				96FE1A241E56FCE500FF8AA8 /* LoginViewController.swift */,
 				96FE1A181E56FBE200FF8AA8 /* ChatVC.swift */,
 				96FE1A191E56FBE200FF8AA8 /* ChatViewController.swift */,
@@ -151,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				96FE1A101E56F9BA00FF8AA8 /* Station.swift */,
+				967A50981E57BEAF006566C9 /* ChatbotMessage.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -339,11 +345,13 @@
 				96FE19F21E56F5F000FF8AA8 /* ViewController.swift in Sources */,
 				96FE1A1D1E56FBE200FF8AA8 /* ChatViewController.swift in Sources */,
 				96FE1A251E56FCE500FF8AA8 /* LoginViewController.swift in Sources */,
+				967A50971E57B48B006566C9 /* SearchResultsController.swift in Sources */,
 				96FE19F01E56F5F000FF8AA8 /* AppDelegate.swift in Sources */,
 				967A508A1E571B0D006566C9 /* MainViewController.swift in Sources */,
 				96FE1A151E56F9F900FF8AA8 /* NetworkModel.swift in Sources */,
 				96FE1A1C1E56FBE200FF8AA8 /* ChatVC.swift in Sources */,
 				96FE19F81E56F5F000FF8AA8 /* SeoulHotPle.xcdatamodeld in Sources */,
+				967A50991E57BEAF006566C9 /* ChatbotMessage.swift in Sources */,
 				96FE1A0D1E56F93400FF8AA8 /* Constants.swift in Sources */,
 				96FE1A221E56FBF300FF8AA8 /* MainTableViewCell.swift in Sources */,
 				96FE1A271E56FD2500FF8AA8 /* APIServiceModel.swift in Sources */,

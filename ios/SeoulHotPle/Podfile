@@ -13,6 +13,7 @@ target 'SeoulHotPle' do
   pod 'Firebase/Messaging'
   pod 'Firebase/Database'
   pod 'GoogleSignIn'
+  pod 'GooglePlaces', '~> 2.1.1'
   pod 'Alamofire', '~> 4.0'
   pod 'SwiftyJSON'
   pod 'Kingfisher'
