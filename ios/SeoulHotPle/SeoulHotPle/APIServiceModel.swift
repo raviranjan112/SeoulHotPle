@@ -79,7 +79,7 @@ class APIServiceModel: NetworkModel {
             case .failure(let err):
                 print("getStation에러")
                 print(err)
-                self.view.networkFail()
+//                self.view.networkFail()
             }
             
         }
@@ -105,7 +105,7 @@ class APIServiceModel: NetworkModel {
                 }
             case .failure(let err):
                 print(err)
-                self.view.networkFail()
+//                self.view.networkFail()
             }
             
         }

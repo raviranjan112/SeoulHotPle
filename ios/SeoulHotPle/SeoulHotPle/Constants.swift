@@ -15,7 +15,7 @@ class Constants {
     //API KEY
 //    public static let API_GOOGLE = "AIzaSyBlvahsZxJzhAg1avcHWjch5zlxYt9LwTE"
     public static let API_GOOGLE = "AIzaSyBlvahsZxJzhAg1avcHWjch5zlxYt9LwTE"
-    public static let API_DAUM_GEOCODE = "bc00c31732663855acc78807ba0669ea"
+    public static let API_DAUM_GEOCODE = "287178090715b52f8b074ab071c8a076"
     public static let API_SEOULSTATION = "4a4c4c664f6a696e37344355524d54"
     
     //current location
