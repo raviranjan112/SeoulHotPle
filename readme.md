@@ -8,7 +8,7 @@
 
 민사 및 형사 상의 책임을 묻겠습니다.
 
-The idea and the products of this project belong to the team SeoulHotPle(김주현,김진규,박상욱,신예진) which was originated from a software development contest "GDGKR Firebased Hackathon"(https://gdg-korea-campus.firebaseapp.com/hackathon/).
+The idea and the products of this project belong to the team SeoulHotPle(김주현,김진규,박상욱,신예진) which was originated from a software development contest "GDGKC Firebased Hackathon. 2017.02.18."(https://gdg-korea-campus.firebaseapp.com/hackathon/).
 
 For any unauthorized reuse, reference, partial copy, plagiarism, embezzlement and commercial use of this software products & idea, 
 
